@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+    <title>MMT</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+		
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+	  <!-- Custom stylesheet CSS-->
+	<!--<link rel="stylesheet" href="./font-awesome/css/fontawesome.min.css">-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/scrollbar-custom.css">
+	<link href="/static/summernote/summernote.css" rel="stylesheet">
+    <!-- Font-icon css-->
+   <!--<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
+	<!-- Jquery import file here -->
+	<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"	></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+	
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  </head>
+  <body class="app sidebar-mini rtl">
+    <!-- Navbar-->
+    <header class="app-header"><a class="app-header__logo" href="#"><img src="/static/images/logo/media-magic-logo-white.svg"/></a>
+      <!-- Sidebar toggle button--><a style="display:none"class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+      <!-- Navbar Right Menu-->
+      <ul class="app-nav">
+        
+        <!-- User Menu-->
+        <li class="dropdown"><a class="app-nav__item toggle-btn" href="#" data-toggle="dropdown" aria-label="Open Profile Menu">
+			<div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="/static/images/icons/icons8-user-50.png" alt="User Image">
+			<div>
+			  <p class="app-sidebar__user-name">Shivdas Mane</p>
+			  <p class="app-sidebar__user-designation"></p>
+			</div>
+		 </div>	
+		</a>
+          <ul class="dropdown-menu settings-menu dropdown-menu-right">
+            <li><a class="dropdown-item" href="#"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+          </ul>
+        </li>
+		<!-- Site Menu-->
+      
+<div class="float-left dropdown" style="margin:10px">
+  <button class="btn btn-primary">Manu</button>
+  <div class="dropdown-content">
+    <a href="{{ url_for('select_emergency') }}"> Fruits</a> 
+    <a href="{{ url_for('select_emergency') }}"> Grocery</a>
+    <a href="{{ url_for('select_emergency') }}"> Emergency</a>
+    <a href="{{ url_for('select_emergency') }}"> Cart</a>
+    
+    <a href="{{ url_for('login') }}"> Logout</a>
+   </div>
+</div>
+    </header>
+    <style>
+      .dropbtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+      }
+      
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropdown-content a:hover {background-color: #ddd;}
+      
+      .dropdown:hover .dropdown-content {display: block;}
+      
+      .dropdown:hover .dropbtn {background-color: #3e8e41;}
+      </style>
+        
+      

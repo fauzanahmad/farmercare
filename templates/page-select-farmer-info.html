@@ -1,0 +1,130 @@
+<div class="success-popup "><div class="success-msg"><div class="success-msg-middle">Updated Successfully !!!</div></div></div>
+<main class="page-content">
+ 
+<!-- Page title Panel start here --->
+<div class="app-wizzard">
+<div class="container">	
+	<div class="row no-gutters">
+		<div class="stepwizard col-md-12">
+			<ul class="forms-wizard nav nav-tabs step-anchor">
+				<li class="nav-item active">
+					<a href="#step-1" class="nav-link">
+						<em>1</em><span>Plot Configuration</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="#step-2" class="nav-link">
+						<em>2</em><span>Pricing Matrix</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="#step-3" class="nav-link">
+						<em>3</em><span>Quote</span>
+					</a>
+				</li>
+			</ul>
+		  </div>
+		</div>
+	</div>
+</div>
+<!-- Page title Panel End here ---> 
+ 
+<!-- Mansory grid panel start here -->
+
+<div class="container clickable">
+	<div class="grid">
+	  <div class="grid-item grid-item--full grid-item--height250 row no-gutter">
+		<div class="col-md-6" style="padding:10px,padding-bottom:10px">
+			<div class="product-image">
+				<img src="/static/images/product/nicrome-product/product-images/plot3.png" class="masonry-image"/>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="product-desc">
+				<h3 class="product-title"><strong>Plot Details</strong></h3>
+				<h6 class="product-sub-title">Plot Id : #411011/301</h6>
+				<p>Address : At Moshi Pune :- 411008</p>
+				<p>Discription : This is an organic farming and this production is standard by MMT group.This is an Lokwan bride wheat.
+					which is fomous and testy.
+				</p>
+			
+			</div>	
+		</div>	
+	  </div>
+	</div>
+
+	   <div class="grid-item col-md-6">
+		<div class="product-group-box">
+			<h4 class="group-title">Per Plot Details</h4>
+			<div class="group-list-grid">
+			<ul class="list-group">
+			<!-- start char item 1 -->
+				<li>
+					<a class="list-group-item list-group-item-action clickable" data-toggle="modal" data-target="#exampleModalCenter" ><span class="list-char-left">Soil Quality :  </span><span class="list-char-right">Black</span></a>
+					
+					<a class="list-group-item list-group-item-action clickable" data-toggle="modal" data-target="#exampleModalCenter" ><span class="list-char-left">Plot Area :  </span><span class="list-char-right">1040 sqft</span></a>
+					
+					<a class="list-group-item list-group-item-action clickable" data-toggle="modal" data-target="#exampleModalCenter" ><span class="list-char-left">Production Quantity :  </span><span class="list-char-right">100kg</span></a>
+					
+													
+				</li>	
+		
+	</div>
+</div>				
+</div>
+
+<div class="float-left dropdown" style="margin-left:160px">
+  <button class="btn btn-primary">Select Plot/s Quantity</button>
+  <div class="dropdown-content">
+    <a href="#"> 1</a> 
+    <a href="#"> 2</a>
+    <a href="#"> 3</a>
+   </div>
+</div>
+
+
+
+
+
+<div class="float-right col-md-2" style="margin-top:130px">
+				<a href="{{ url_for('select_price') }}" id="proceed" ><button class="btn btn-primary" type="button" data-backdrop="static" data-keyboard="false">Proceed to Price >> </button></a>
+			</div>
+
+			 
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+	

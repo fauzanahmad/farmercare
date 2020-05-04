@@ -1,0 +1,856 @@
+
+<main class="page-content">
+
+<div class="app-wizzard">
+	<div class="container">	
+		<div class="row no-gutters">
+			<div class="stepwizard col-md-12">
+				<ul class="forms-wizard nav nav-tabs step-anchor">
+					<li class="nav-item active">
+						<a href="#step-1" class="nav-link">
+							<em>1</em><span>Plot Configure</span>
+						</a>
+					</li>
+					<li class="nav-item active">
+						<a href="#step-2" class="nav-link">
+							<em>2</em><span>Pricing Matrix</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="#step-3" class="nav-link">
+							<em>3</em><span>Quote</span>
+						</a>
+					</li>
+				</ul>
+			  </div>
+			</div>
+	</div>
+</div>
+<!-- wizard  -->
+ 
+<section class="temp-page-section">
+ <div class="container">
+	<div class="tab-panel">
+		<div class="main-card mb-3 card">
+				<div class="card-header row no-gutters">
+					<div class="card-panel-left col-md-6">
+						<div class="cp-box-left">
+							<!--<i class="fa fa-user fa-lg icon-right-mg"> </i>-->	
+							<img class="icon-img" src="/static/images/icons/icons8-math-32.png"/>
+							<span class="tab-heading-title">BILL OF MATERIAL (BOM) CALCULATOR</span>
+						</div>
+					</div>
+										
+					<div class="card-panel-right col-md-6">
+						<div class="btn-actions-pane-right actions-icon-btn btn-pos">
+							<div class="dropdown">
+								<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+									 Currency: INR 
+									</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-body">
+				<div id="table-scroll" class="table-scroll">
+				<div id="faux-table" class="faux-table " aria="hidden"></div>
+					<div class="table-wrap scrollbar-dynamic">
+					  <table id="bom-cal-table" class="table table-bordered table-hover table-sm bom-cal-table">
+							<thead class="thead-light">
+							  <tr>
+								<th width="7%">Sr. No</th>
+								<th width="25%" colspan="2">Description</th>
+								<th width="10%" width="10%">Qty.</th>
+								<th width="20%" align="right" >Unit Price</th>
+								<th width="25%" align="right" >Amount</th>
+							  </tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>1</td>
+								<td colspan="2">Plot</td>
+								<td class="table-td-center">
+									<input type="number" id="basic_product_qty" name="basic_product_qty" class="form-control jqty" value="1">
+								</td>
+								<td align="right">
+									<input type="number" id="basic_product_unit_price" name="basic_product_unit_price" class="form-control jamt" value="2700">
+								</td>
+								<td align="right">
+									<input type="number" id="basic_product_amt" name="basic_product_amt" class="form-control jtot" value="2700" disabled>
+								</td>
+						   </tr>
+						</tbody>
+						<tfoot>
+							<tr>
+							  <th></th>
+							  <th colspan="4">Sub Total</th>
+							  <th colspan="2" align="right"><input type="text" class="total" value="2700" /></th>
+							</tr>
+						  </tfoot>
+						  </table>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ </section>
+ <section class="temp-page-section">
+ <div class="container">
+	<div class="tab-panel">
+		<div class="main-card mb-3 card">
+				<div class="card-header row no-gutters">
+					<div class="card-panel-left col-md-6">
+						<div class="cp-box-left">
+							<!--<i class="fa fa-user fa-lg icon-right-mg"> </i>-->	
+							<img class="icon-img" src="/static/images/icons/icons8-math-32.png"/>
+							<span class="tab-heading-title">ADDITIONAL ITEMIZED CHARGES</span>
+						</div>
+					</div>
+										
+				</div>
+				<div class="card-body">
+					  <table class="table table-bordered table-hover table-sm">
+				<thead class="thead-light">
+			  <tr>
+				<th width="300" align="left">Description</th>
+				<th width="200" align="left">&nbsp;</th>
+				<th>Value</th>
+				<th align="right" >Amount</th>
+				</tr>
+				</thead>
+				<tbody>
+			  <tr>
+				<td>Tax</td>
+				<td width="200">Percentage
+				  
+				  </td>
+				<td>9</td>
+				<td align="right">270</td>
+				</tr>
+			  
+			  <tr>
+				<td>Packing &amp; Forwarding</td>
+				<td width="200">
+				  <div class="form-group">
+				<select class="form-control form-control-sm">
+				  <option>Percentage</option>
+				  <option>Fixed</option>
+
+				</select>
+			  </div>
+				</td>
+				<td>1</td>
+				<td align="right">230</td>
+			  </tr>
+			  <tr>
+				<td>Transporting</td>
+				<td width="200"><div class="form-group">
+				  <select name="select" class="form-control form-control-sm">
+					<option>Percentage</option>
+					<option>Fixed</option>
+				  </select>
+				</div></td>
+				<td>1</td>
+				<td align="right">400</td>
+			  </tr>
+			  <tr>
+				<td>Insurance</td>
+				<td width="200"><div class="form-group">
+				  <select name="select" class="form-control form-control-sm">
+					<option>Percentage</option>
+					<option>Fixed</option>
+				  </select>
+				</div></td>
+				<td>1</td>
+				<td align="right">90</td>
+			  </tr>
+			  
+			  <tr>
+				<td>Quality Inspection</td>
+				<td width="200"><div class="form-group">
+				  <select name="select" class="form-control form-control-sm">
+					<option>Percentage</option>
+					<option>Fixed</option>
+				  </select>
+				</div></td>
+				<td>1</td>
+				<td align="right">70</td>
+			  </tr>
+			 
+			  <tr class="table-active">
+				<td>Sub Total</td>
+				<td width="200">&nbsp;</td>
+				<td>&nbsp;</td>
+				<td align="right">3760</td>
+			  </tr>
+				</tbody>
+			  </table>
+			</div>
+		</div>
+	</div>
+ </section>
+ 
+ 
+ <!-- T&C section begins -->
+ 
+ 
+ <section class="temp-page-section">
+ <div class="container">
+	<div class="tab-panel">
+		<div class="main-card mb-3 card">
+				<div class="card-header row no-gutters">
+					<div class="card-panel-left col-md-2">
+						<div class="cp-box-left">
+							<!--<i class="fa fa-user fa-lg icon-right-mg"> </i>-->	
+							<img class="icon-img" src="/static/images/icons/customer-add-icon.png"/>
+							<span class="tab-heading-title">Text Elements</span>
+						</div>
+					</div>
+										
+					<div class="card-panel-right col-md-8">
+						<div class="btn-actions-pane-right actions-icon-btn">
+							<div role="group" class="btn-group-sm nav btn-group">
+								<a data-toggle="tab" href="#tab-eg3-0" class="nav-link show active">Cover Letter</a>
+								<a data-toggle="tab" href="#tab-eg3-1" class="nav-link show ">Terms & Conditions</a>
+                                <a data-toggle="tab" href="#tab-eg3-2" class="nav-link show ">Bank Details</a>
+                                <a data-toggle="tab" href="#tab-eg3-3" class="nav-link show ">Statutory Information</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="tab-content">
+						<div class="tab-pane active show" id="tab-eg3-0" role="tabpanel">
+							<div class="">
+                            
+                                <div id="summernote">                            
+								To,<br />
+								<br />
+								Shivdas Mane<br />
+
+								Subject: Quotation for Plots <br />
+								<br />
+
+
+								Dear (Sir or Madam)
+								<br />
+
+								I on behalf of Company is writing this letter to you after reading your notice in the newspaper for requirement of good material supplier. Our company has vast experience in manufacturing and transporting construction materials and hence feels we would be the right choice for your company.
+								<br />
+								<br />
+
+								Our company have till date supplied quality material to diverse clients all over the globe and hence would suit your requirement in every way. Waiting for a positive reply from your side.
+								<br />
+								<br />
+
+								Yours Truly,
+								<br />
+								<br />
+
+								Media Magic Technologies
+
+								<br />
+								<br />
+								______________
+
+								<br />
+								<br />
+							Sign of the Manager</div>
+								
+
+
+                            
+                            </div>
+					</div>
+					<div class="tab-pane" id="tab-eg3-1" role="tabpanel">
+						<div class="">
+                        <table style="margin-left: calc(100% - 100% - 0px); width: 100%;">
+							<tbody>
+								<tr>
+									<td style="width: 25.7763%;">Price</td>
+									<td style="width: 2.9504%;">:
+										<br>
+									</td>
+									<td style="width: 71.1179%;">Ex Works
+										<br>
+									</td>
+								</tr>
+								<tr>
+									<td style="background-color: rgb(209, 213, 216); width: 25.7763%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 2.9504%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 71.1179%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 25.7763%;">Packing charges
+										<br>
+									</td>
+									<td style="width: 2.9504%;">:
+										<br>
+									</td>
+									<td style="width: 71.1179%;">2% extra
+										<br></td>
+								</tr>
+								<tr>
+									<td style="background-color: rgb(209, 213, 216); width: 25.7763%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 2.9504%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 71.1179%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 25.7763%;">GST
+										<br>
+									</td>
+									<td style="width: 2.9504%;">:
+										<br>
+									</td>
+									<td style="width: 71.1179%;">Out of Maharashtra - IGST 18%
+										<br>Within Maharashtra - CGST 9% + SGST 9%
+										<br>
+									</td>
+								</tr>
+								<tr>
+									<td style="background-color: rgb(209, 213, 216); width: 25.7763%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 2.9504%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 71.1179%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 25.7763%;">Insurance Charges
+										<br>
+									</td>
+									<td style="width: 2.9504%;">:
+										<br>
+									</td>
+									<td style="width: 71.1179%;">0.50% on Invoice value if arranged by us
+										<br>
+									</td>
+								</tr>
+								<tr>
+									<td style="background-color: rgb(209, 213, 216); width: 25.7763%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 2.9504%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 71.1179%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 25.7763%;">Freight Charges
+										<br>
+									</td>
+									<td style="width: 2.9504%;">:
+										<br>
+									</td>
+									<td style="width: 71.1179%;">At actual to customer account
+										<br>
+									</td>
+								</tr>
+								<tr>
+									<td style="background-color: rgb(209, 213, 216); width: 25.7763%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 2.9504%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 71.1179%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 25.7763%;">Delivery Mode
+										<br>
+									</td>
+									<td style="width: 2.9504%;">:
+										<br>
+									</td>
+									<td style="width: 71.1179%;">By Road
+										<br>
+									</td>
+								</tr>
+								<tr>
+									<td style="background-color: rgb(209, 213, 216); width: 25.7763%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 2.9504%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 71.1179%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 25.7763%;">Payment terms
+										<br>
+									</td>
+									<td style="width: 2.9504%;">:
+										<br>
+									</td>
+									<td style="width: 71.1179%;">50% advance along with the order &amp; balance against Proforma Invoice before dispatch
+										<br>
+									</td>
+								</tr>
+								<tr>
+									<td style="background-color: rgb(209, 213, 216); width: 25.7763%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 2.9504%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 71.1179%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 25.7763%;">Delivery Period
+										<br>
+									</td>
+									<td style="width: 2.9504%;">:
+										<br>
+									</td>
+									<td style="width: 71.1179%;">12 to 14 weeks after receipt of your confirmed Purchase Order along with technical details
+										<br>
+									</td>
+								</tr>
+								<tr>
+									<td style="background-color: rgb(209, 213, 216); width: 25.7763%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 2.9504%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 71.1179%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 25.7763%;">Installation and Commissioning
+										<br>
+									</td>
+									<td style="width: 2.9504%;">:
+										<br>
+									</td>
+									<td style="width: 71.1179%;">Rs.40000/- + Service tax as applicable
+										<br>
+									</td>
+								</tr>
+								<tr>
+									<td style="background-color: rgb(209, 213, 216); width: 25.7763%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 2.9504%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 71.1179%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="background-color: rgb(255, 255, 255); width: 25.7763%;">Factory inspection
+										<br>
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(255, 255, 255); width: 2.9504%;">
+										<div data-empty="true">:</div>
+									</td>
+									<td style="background-color: rgb(255, 255, 255); width: 71.1179%;">It is physical verification of the ordered equipment at our Shirwal works and without interconnection of duct work &amp; utilities
+										<br>
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="background-color: rgb(209, 213, 216); width: 25.7763%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 2.9504%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 71.1179%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 25.7763%;">Supervision of Installation
+										<br>
+									</td>
+									<td style="width: 2.9504%;">
+										<div data-empty="true">:</div>
+									</td>
+									<td style="width: 71.1179%;">Per Service Engineer/day &nbsp;Rs. 10,000/-
+										<br>
+
+										<p align="justify">Per Process Engineer/day Rs. 14,500/-
+											<br>Per Programmer/day &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Rs. 16,000/-</p>
+
+										<p align="justify">Normal installation schedule: 15 days. Process for 2 selected products will be standardized at site during commissioning along with operator training.</p>
+
+										<p align="justify">We will render services towards installation and commissioning, subject to equipment getting installed at your works within 6 months from the date of dispatch from our works. If for any reason, the equipment is not installed within this stipulated time, the charges for the same shall be extra, which will be communicated to you at that time.</p>
+
+										<p align="justify">We will depute our Service Engineer&#39;s for Installation &amp; Commissioning of the machines at your site. In case of non-readiness of the utilities # such as power, compressed air etc., packing material and the operators, and due to which our Service Engineer remains idle at site, then the same will be charged @ Rs.14,000/- per day per engineer and the same will have to be paid against the receipt of invoice.</p>
+									</td>
+								</tr>
+								<tr>
+									<td style="background-color: rgb(209, 213, 216); width: 25.7763%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 2.9504%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 71.1179%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 25.7763%;">Validity
+										<br>
+									</td>
+									<td style="width: 2.9504%;">:
+										<br>
+									</td>
+									<td style="width: 71.1179%;">30 days from the date of offer
+										<br>
+									</td>
+								</tr>
+								<tr>
+									<td style="background-color: rgb(209, 213, 216); width: 25.7763%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 2.9504%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 71.1179%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="background-color: rgb(255, 255, 255); width: 25.7763%;">
+										<div data-empty="true">
+											<br>Special Conditions and or exclusions&nbsp;</div>
+									</td>
+									<td style="background-color: rgb(255, 255, 255); width: 2.9504%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(255, 255, 255); width: 71.1179%;">
+										<div style="text-align: justify;">1. Any items not mentioned in our offer.</div>
+										<div style="text-align: justify;">2. Utilities - The utilities like steam, chilled water, compressed air, WIP Water for cleaning at required conditions, quantities and location is in customer scope</div>
+										<div style="text-align: justify;">3. MS Frames for AHU, blower, wet scrubber, control Panel are in customer scope.</div>
+										<div style="text-align: justify;">4. All chilled water, steam, condensate lines including valves and gauges is in customer scope. However the main steam control valve and chilled water 3 way valve shall be provided by Company</div>
+										<div style="text-align: justify;">5. Main power cabling and earthing to machine control panel, machine, weighing balance, Wet Scrubber, AHU inlet blower and exhaust blower are in customer scope.</div>
+										<div style="text-align: justify;">6. Company will provide following :- i) control cable :- &nbsp; &nbsp;m &nbsp;ii) Pneumatic tube :- &nbsp;m</div>
+										<div style="text-align: justify;">7. Any additional documentation or 3rd party inspection is not included in offer</div>
+										<div style="text-align: justify;">8. The Ducting prices are in unit rates and will be as per site conditions post Drawing approval. In case customer wishes to procure directly Company will provide the ducting drawings.</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="background-color: rgb(209, 213, 216); width: 25.7763%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 2.9504%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 71.1179%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 25.7763%;">Warranty
+										<br>
+									</td>
+									<td style="width: 2.9504%;">:
+										<br>
+									</td>
+									<td style="width: 71.1179%;">
+										<div style="text-align: justify;">Complete machines and/or main equipments are under warranty against defective materials, faulty workmanship and/or manufacturing defects, for a period of one year from the date of dispatch or 18 months from the date of dispatch whichever is earlier. Fast wearing parts and/or wear arising from normal wear and tear are not included in the scope of this guarantee. Moreover, we are not responsible for the electricals, electronics, bought out items and/or accessories/equipments for which a warranty is provided by the original manufacturer and which can be availed of by you to the warranty is available at the time of supply.
+											<br>
+											<br>
+										</div>
+										<div style="text-align: justify;">This warranty is valid for a period of one year from the date of shipment/despatch in case of export.
+											<br>
+											<br>
+										</div>
+										<div style="text-align: justify;">Under this warranty, we agree to repair at our Factory or replace without charges, ex-our-works, equipments or part/parts there of which one year from the date of shipment/despatch, shall prove to have been defective when shipped provided the purchaser gives us notification in writing within 10 days after discovery of such defect and immediately delivers (at purchaser&rsquo;s risk and cost) the defective part s to our works, our company&rsquo;s liability for the damages caused by such defective item (s) shall be limited to repairing/replacement as specified above. No allowance shall be made for any repairs or alterations made by the Purchaser without our prior written consent. We shall not accept any liability if the equipment has not been used in the prescribed manner or if any unskilled or unauthorized person has tampered with machine.
+											<br>
+											<br>
+										</div>
+										<div style="text-align: justify;">The equipment cannot be guaranteed in the following cases: 1) Where the Purchase insist on outstation despatch without packing. 2) If the Purchaser dose not contain our prior approval on commissioning the machine without our service.</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="background-color: rgb(209, 213, 216); width: 25.7763%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 2.9504%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 71.1179%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 25.7763%;">Our Bankers
+										<br>
+									</td>
+									<td style="width: 2.9504%;">:
+										<br>
+									</td>
+									<td style="width: 71.1179%;">
+										<br>
+									</td>
+								</tr>
+								<tr>
+									<td style="background-color: rgb(209, 213, 216); width: 25.7763%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 2.9504%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+									<td style="background-color: rgb(209, 213, 216); width: 71.1179%;">
+										<div data-empty="true">
+											<br>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 25.7763%;">Presentation
+										<br>
+									</td>
+									<td style="width: 2.9504%;">:
+										<br>
+									</td>
+									<td style="width: 71.1179%;">* All the images displayed in this offer are for representation purposes only but in actual may vary
+										<br>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+                        </div>
+                        
+                        </div>
+                        
+                        <div class="tab-pane" id="tab-eg3-2" role="tabpanel">
+						<div class="">
+                        sfdsfdsf
+                        </div>
+                        </div>
+                        
+                        <div class="tab-pane" id="tab-eg3-3" role="tabpanel">
+						<div class="">
+                        sfergs3243
+                        </div>
+                        </div>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+ </section>
+ <!-- T&C ends here -->
+ 
+ 
+ <!-- Button panel start here --> 
+<div class="container"> 
+	<div class="row no-gutters">
+		<div class="col-md-12">
+			<div class="btn-panel float-right">
+				<a href="{{ url_for('select_quote') }}"><button class="btn btn-primary" type="button" ><i class="fa fa-fw fa-lg fa-check-circle"></i>Proceed >></button></a>
+			</div>
+		</div>
+	</div>
+ </div>
+<!-- Button panel End here --> 
+</main>
+<script>
+
+// run script when qty value change in price calculation 
+	$(".jqty").change(function(){
+		var current_row_qty = $(this).val();
+		
+		if(current_row_qty < 1)
+		{
+			//alert("You have Enter Invalid quantity number.Quantity required aleast 1 unit.");
+				$.alert({
+				title: 'Warning',
+				content: ' You have Enter Invalid quantity number.Quantity required aleast 1 unit!',
+				});
+			$(this).val("1");
+		}	
+			current_row_qty = $(this).val(); // updated value
+			var $this = $(this),
+			$row = $this.closest('tr'),
+			current_row_amt = $row.find('input.jamt').val();
+			current_row_tot = current_row_qty*current_row_amt; 
+			//alert(current_row_tot);
+			$row.find('input.jtot').val(current_row_tot);
+			
+			var sum = 0;
+			$("input[class *= 'jtot']").each(function(){
+			
+				sum += +$(this).val();
+			});
+			//alert(sum);
+			$(".total").val(sum);
+			
+	});
+	
+// run script when amt value change in price calculation 
+	$(".jamt").change(function(){
+		var current_row_amt = $(this).val();
+		
+		if(current_row_amt < 0 || current_row_amt=="")
+		{
+			alert("Wrong Input value here.Amount value should be 0 or more");
+			$(this).val("0");
+		}
+		current_row_amt = $(this).val();
+		var $this = $(this),
+        $row = $this.closest('tr'),
+        current_row_qty = $row.find('input.jqty').val();
+		current_row_tot = current_row_qty*current_row_amt;
+		//alert(current_row_tot);
+		$row.find('input.jtot').val(current_row_tot);
+		
+		var sum = 0;
+			$("input[class *= 'jtot']").each(function(){
+			
+				sum += +$(this).val();
+			});
+			//alert(sum);
+			$(".total").val(sum);
+		   
+		});	
+
+/*
+$( document ).ready(function(e) {
+    var sum = 0;
+    $(".jtot").each(function(){
+		alert($(this).val());
+        sum += +$(this).val();
+    });
+	alert(sum);
+    $(".total").val(sum);
+});
+*/
+</script>
+<script>
+(function() {
+  var fauxTable = document.getElementById("faux-table");
+  var mainTable = document.getElementById("bom-cal-table");
+  var clonedElement = mainTable.cloneNode(true);
+  var clonedElement2 = mainTable.cloneNode(true);
+  clonedElement.id = "";
+  clonedElement2.id = "";
+  fauxTable.appendChild(clonedElement);
+  fauxTable.appendChild(clonedElement2);
+})();
+</script>

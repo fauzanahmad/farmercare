@@ -1,0 +1,64 @@
+
+<main class="page-content">
+ <!-- If require breadcrum then inclide breadcrum.php here -->
+ <section class="login-page-section">
+	<div class="left-section">
+		<div class="login-bg">
+			<div class="login-bg-text">
+				<div class="wl-title">
+					<h3><Strong>Without Farmers</strong> , Mankind Can Not Progress</h3>
+				</div>
+				<div class="wl-caption">
+					<p>Without farmers, we wouldn’t have access to food and other basic necessities. Take a moment to really appreciate this profession and all the hard work and dedication the farm life requires.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="right-section">
+		<div class="login-box">
+			<div class="login-panel">
+				<div class="row no-gutters">
+					<div class="col-md-12">
+						<div class="wx-wl-bk">Welcome To Organic Farming </div>
+						<div class="wx-wl-sign-up">Feel As Farmer... </div>
+						<div class="wx-wl-sign">Please sign in to your account.</div>
+						<div class="wx-wl-sign-up">No account?
+							<a class="text-primary" href="{{ url_for('select_customer') }}">Sign up now</a>
+						</div>
+					</div>
+				</div>
+				<div class="divider"></div>
+				
+				<form action="{{ url_for('user_signup') }}" method="POST">
+				<div class="row no-gutters">
+				   <div class="col-md-6">
+					  <fieldset class="form-group">
+						 <div role="group" tabindex="-1"><label for="exampleEmail">Email / Mobile No.</label><input class="form-control" id="exampleEmail" name="email" placeholder="Email or Mobile No" type="email"></div>
+					  </fieldset>
+				   </div>
+				   <div class="col-md-6">
+					  <fieldset class="form-group">
+						 <div role="group" tabindex="-1"><label for="examplePassword">Password</label><input class="form-control" id="examplePassword" name="password" placeholder="Password here..." type="password"></div>
+					  </fieldset>
+				   </div>
+				</div>
+				
+				<div class="custom-control custom-checkbox">
+					<input autocomplete="off" class="custom-control-input" id="exampleCheck" name="check" type="checkbox" value="true">
+					<label class="custom-control-label" for="exampleCheck"> Keep me logged in </label>
+				</div>
+
+				<div class="divider"></div>
+				
+				 <div class="col-md-12">
+					<div class="wx-auto">
+						<a class="btn-lg btn btn-link" href="#">Recover Password</a>
+						<button class="btn btn-primary btn-lg" type="submit"><i class="fa fa-sign-in fa-lg fa-fw"></i>Login to Dashboard</button>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+ </section>
+</main>

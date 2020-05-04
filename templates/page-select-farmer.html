@@ -1,0 +1,174 @@
+<main class="page-content">
+ <!-- If require breadcrum then inclide breadcrum.php here -->
+ <section class="temp-page-section">
+ <div class="container">
+	<div class="tab-panel">
+		<div class="main-card mb-3 card">
+				<div class="card-header row no-gutters">										
+					<div class="card-panel-right col-md-6">
+						<div class="btn-actions-pane-right actions-icon-btn">
+							<div role="group" class="btn-group-sm nav btn-group">
+								<a data-toggle="tab" href="#tab-eg3-0" class="nav-link show active">Plot Details</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+					<div class="tab-pane" id="tab-eg3-1" role="tabpanel">
+						<div class="customer-panel">
+						<form class="form-horizontal">
+							<div class="row no-gutters">
+								<div class="col-md-6 form-left">
+									<div class="form-group row">
+									  <label class="control-label col-md-3">Plot Address</label>
+									  <div class="col-md-8">
+										<textarea class="form-control" rows="4" placeholder="Enter your address"></textarea>
+									  </div>
+									</div>
+									<div class="form-group row">
+									  <label class="control-label col-md-3">Type</label>
+									  <div class="col-md-9">
+										<div class="animated-radio-button">
+										  <label>
+											<input type="radio"><span class="label-text">Plot Rent</span>
+										  </label>
+										</div>
+										<div class="animated-radio-button">
+										  <label>
+											<input type="radio"><span class="label-text">Grocery Sell</span>
+										  </label>
+										</div>
+									  </div>
+									</div>
+									<div class="form-group row">
+									  <div class="col-md-8 col-md-offset-3">
+										<div class="animated-checkbox">
+										  <label>
+											<input type="checkbox" class="form-check-input"><span class="label-text">I accept the terms and conditions</span>
+										  </label>
+										</div>
+									  </div>
+									</div>
+								</div>
+								<div class="col-md-6 form-right">
+									<div class="form-group row">
+									  <label class="control-label col-md-3">Grocery Type</label>
+									  <div class="col-md-8">
+										<select class="form-control" id="exampleSelect1">
+										  <option>Select Grocery</option>
+										  <option>Wheat</option>
+										  <option>Rice</option>
+										  <option>Sorghum</option>
+										  <option>Sugar</option>
+										  <option>Other</option>
+										</select>
+									  </div>
+									</div>
+									<div class="form-group row">
+									  <label class="control-label col-md-3">No of Plots</label>
+									  <div class="col-md-8">
+										<select class="form-control" id="exampleSelect1">
+										  <option>Select Grade</option>
+										  <option>1</option>
+										  <option>2</option>
+										  <option>3</option>
+										  <option>4</option>
+										  <option>5</option>
+										   <option>Others</option>
+										</select>
+									  </div>
+									</div>
+									<div class="form-group row">
+									  <label class="control-label col-md-3">Subtype</label>
+									  <div class="col-md-8">
+										<select class="form-control" id="exampleSelect1">
+										  <option>Select Subtype</option>
+										  <option>Ambemohar</option>
+										  <option>Basmati</option>
+										  <option>Dawat</option>
+										  <option>Kolam</option>
+										  <option>Other</option>
+										</select>
+									  </div>
+									</div>
+									<div class="form-group row">
+									  <label class="control-label col-md-3">Sr No</label>
+									  <div class="col-md-8">
+										<input class="form-control" type="text" placeholder="Enter local Pincode">
+									  </div>
+									</div>
+									<div class="form-group row">
+									  <label class="control-label col-md-3">Water Supply</label>
+									  <div class="col-md-9">
+										<div class="form-check">
+										  <label class="form-check-label">
+											<input class="form-check-input" type="radio" name="gender">Very Good
+										  </label>
+										</div>
+										<div class="form-check">
+										  <label class="form-check-label">
+											<input class="form-check-input" type="radio" name="gender">Good
+										  </label>
+										</div>
+									  </div>
+									</div>
+									<div class="form-group row">
+									  <label class="control-label col-md-3">Plot Picture</label>
+									  <div class="col-md-8">
+										<input class="form-control" type="file" placeholder="Choose Profile picture">
+									  </div>
+									</div>
+								</div>
+							</div>
+							<div class="d-block text-right card-footer">
+								<!--<button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="fa fa-trash"> </i></button>-->
+								<a href="{{ url_for('login') }}"<button class="btn-wide btn btn-success"><i class="fa fa-fw fa-lg fa-check-circle"></i> Save</button></a>
+						  </form>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+ </section>
+</main>
+<script>
+
+	
+
+ // code here
+ 
+ (function($) {
+
+  $.wait = function(duration, completeCallback, target) {
+    $target = $(target || '<queue />');
+    return $target.delay(duration).queue(function(next){completeCallback && completeCallback.call($target); next();});
+  }
+
+  $.fn.wait = function(duration, completeCallback) {
+    return $.wait.call(this, duration, completeCallback, this);
+  };
+
+})(jQuery);
+
+
+	$("#search-btn").click(function(){
+	$('.loding-box').show();
+	 $.wait(1000, function() {
+   
+		$.ajax({
+		  url: "page-ajax-search.php",
+		  success: function(result){
+		$("#search-result1").html(result);
+		$('.loding-box').hide();
+		//$(".modal").modal('hide');			 
+			 //$(".success-popup").show();
+				//$.wait(1000, function(){				
+					//$(".success-popup").hide();
+			//});
+	  }});	
+	});
+	//$('.loding-box').hide();
+	});
+
+</script>
